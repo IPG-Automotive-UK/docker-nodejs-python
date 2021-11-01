@@ -9,8 +9,15 @@ Dockerfile for a Linux image that has NodeJS and Python installed. This is a bas
 
 We build for AMD64 and ARM64 architectures.
 
+If this is the first time you are building this image then you will need to run this command to create a multi-arch builder.
+
 ```
 docker buildx create --name ipgbuilder
+```
+
+Now you can create the builds.
+
+```
 docker buildx use ipgbuilder
 docker buildx inspect --bootstrap
 docker buildx build --platform linux/amd64,linux/arm64 --tag ipgautomotiveuk/nodejs-python:latest --push .
