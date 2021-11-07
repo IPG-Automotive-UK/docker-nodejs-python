@@ -2,10 +2,12 @@
 
 Dockerfile for a Linux image that has NodeJS and Python installed. This is a base container for our web applications that require NodeJS and Python.
 
-- NodeJS 14.14.0
+- NodeJS 16.13.0
 - Python 3.8.0
 
 ## Build & push image to DockerHub
+
+https://hub.docker.com/repository/docker/ipgautomotiveuk/nodejs-python
 
 We build for AMD64 and ARM64 architectures.
 
