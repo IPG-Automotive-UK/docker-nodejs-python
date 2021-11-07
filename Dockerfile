@@ -1,13 +1,13 @@
 # build on top of base node image
-FROM node:14.14.0
+FROM node:16.13.0
 
 # install libraries required by IPG Lock
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     libusb-0.1-4
 
-# download and compile python 3.8.0
+# download and compile python
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    build-essential checkinstall
+    build-essential
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     libreadline-gplv2-dev libncursesw5-dev libssl-dev \
     libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev

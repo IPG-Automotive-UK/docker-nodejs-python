@@ -5,10 +5,20 @@ Dockerfile for a Linux image that has NodeJS and Python installed. This is a bas
 - NodeJS 14.14.0
 - Python 3.8.0
 
-## Build image
+## Build & push image to DockerHub
 
-`docker build --tag ipgautomotiveuk/nodejs-python:latest .`
+We build for AMD64 and ARM64 architectures.
 
-## Publish image
+If this is the first time you are building this image then you will need to run this command to create a multi-arch builder.
 
-`docker push ipgautomotiveuk/nodejs-python:latest`
+```
+docker buildx create --name ipgbuilder
+```
+
+Now you can create the builds.
+
+```
+docker buildx use ipgbuilder
+docker buildx inspect --bootstrap
+docker buildx build --platform linux/amd64,linux/arm64 --tag ipgautomotiveuk/nodejs-python:latest --push .
+```
