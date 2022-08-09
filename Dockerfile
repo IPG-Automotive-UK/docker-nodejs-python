@@ -21,3 +21,6 @@ RUN make altinstall
 # install pip
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python3.8 get-pip.py
+
+# install latest npm
+RUN npm install -g npm@8.16.0
