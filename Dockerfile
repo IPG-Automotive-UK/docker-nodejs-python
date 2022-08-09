@@ -1,5 +1,5 @@
 # build on top of base node image
-FROM node:16.13.0
+FROM node:16.16.0
 
 # install libraries required by IPG Lock
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
