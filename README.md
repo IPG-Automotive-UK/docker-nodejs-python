@@ -2,7 +2,7 @@
 
 Dockerfile for a Linux image that has NodeJS and Python installed. This is a base container for our web applications that require NodeJS and Python.
 
-- NodeJS 18.16.0
+- NodeJS 20.9.0
 - Python 3.8.0
 
 ## Build & push image to DockerHub
@@ -22,5 +22,5 @@ Now you can create the builds.
 ```
 docker buildx use ipgbuilder
 docker buildx inspect --bootstrap
-docker buildx build --platform linux/amd64,linux/arm64 --tag ipgautomotive/nodejs-python:node18 --push .
+docker buildx build --platform linux/amd64,linux/arm64 --tag ipgautomotive/nodejs-python:node20 --push .
 ```
